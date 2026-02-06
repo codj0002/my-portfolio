@@ -16,7 +16,7 @@
   --max: 1100px;
   --font-heading: "HFMigraffi", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-  --font-body: "Recoleta", ui-serif, Georgia, "Times New Roman", Times, serif;
+  --font-body: "Cofo", "Recoleta", ui-serif, Georgia, "Times New Roman", Times, serif;
 }
 
 /*
@@ -24,11 +24,20 @@
   -----
   Add your font files here:
     assets/fonts/HFMigraffi.woff2
-    assets/fonts/Recoleta.woff2
+    assets/fonts/Cofo.woff2
+    assets/fonts/Recoleta.woff2 (optional fallback)
 */
 @font-face {
   font-family: "HFMigraffi";
   src: url("assets/fonts/HFMigraffi.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cofo";
+  src: url("assets/fonts/Cofo.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
