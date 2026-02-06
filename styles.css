@@ -517,6 +517,108 @@ a:hover {
   text-decoration: none;
 }
 
+/* Projects: UX/UI writeup + mockups */
+.prose {
+  color: var(--text);
+}
+
+.prose p {
+  margin: 0 0 12px;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.mockup-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.mockup {
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.50);
+  box-shadow: 0 18px 55px rgba(55, 16, 92, 0.12);
+  margin: 0; /* reset figure default */
+}
+
+.mockup--desktop {
+  grid-column: span 12;
+}
+
+.mockup--tablet,
+.mockup--phone {
+  grid-column: span 6;
+}
+
+.mockup-media {
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.mockup img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 620px;
+  object-fit: contain;
+}
+
+.mockup figcaption {
+  padding: 10px 12px;
+  color: var(--muted);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+}
+
+/* UX/UI: personas */
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.persona {
+  grid-column: span 4;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.50);
+  box-shadow: 0 18px 55px rgba(55, 16, 92, 0.12);
+  margin: 0;
+}
+
+.persona .persona-media {
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.persona img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  display: block;
+}
+
+.persona figcaption {
+  padding: 10px 12px;
+  color: var(--muted);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  font-size: 0.95rem;
+}
+
 /* Footer */
 .site-footer {
   padding: 30px 0 44px;
@@ -555,6 +657,19 @@ a:hover {
   .content-item {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .mockup-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .mockup--tablet,
+  .mockup--phone {
+    grid-column: span 12;
+  }
+
+  .persona {
+    grid-column: span 12;
   }
 }
 

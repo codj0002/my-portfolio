@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Animation</title>
+    <meta name="description" content="Animation and motion design projects." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-animation">
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav" aria-label="Primary">
+          <a class="brand" href="index.html">
+            <img class="brand-logo" src="assets/logo.png" alt="Site logo" />
+            <span>Portfolio</span>
+          </a>
+
+          <div class="nav-links">
+            <a class="pill" href="index.html">Home</a>
+            <a class="pill" href="about.html">About</a>
+            <a class="pill" href="Project.html">Projects</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="grid">
+            <div class="span-12">
+              <a class="btn" href="Project.html">← Back to Projects</a>
+            </div>
+
+            <section class="span-12 card card-pad">
+              <h1 class="title" style="margin-bottom: 10px">Animation</h1>
+              <p class="subtitle">
+                Add your motion/animation work here (After Effects, reels, short
+                clips, breakdowns, and outcomes).
+              </p>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="line" aria-hidden="true"></div>
+        <small>© <span id="year">2026</span> Portfolio</small>
+      </div>
+      <script>
+        document.getElementById("year").textContent = String(
+          new Date().getFullYear()
+        );
+      </script>
+    </footer>
+  </body>
+</html>
+
