@@ -52,6 +52,10 @@ body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   color: var(--text);
@@ -63,6 +67,25 @@ body {
     radial-gradient(900px 650px at 40% 92%, rgba(126, 166, 255, 0.16), transparent 62%),
     linear-gradient(180deg, var(--bg1), var(--bg0));
   overflow-x: hidden;
+}
+
+/* Page transitions (slide left → right) */
+body {
+  opacity: 0;
+  transform: translateX(-18px);
+}
+
+body.is-loaded {
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity 220ms ease,
+    transform 260ms cubic-bezier(0.2, 0.7, 0.25, 1);
+}
+
+body.is-leaving {
+  opacity: 0;
+  transform: translateX(18px);
 }
 
 h1,
@@ -80,9 +103,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+  text-decoration: none;
 }
 
 .container {
@@ -133,6 +154,22 @@ a:hover {
   box-shadow: 0 10px 26px rgba(55, 16, 92, 0.12);
 }
 
+/* Logo micro animation (safe everywhere) */
+@keyframes logo-pop {
+  from {
+    transform: scale(0.92);
+    opacity: 0.001;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+body.is-loaded .brand-logo {
+  animation: logo-pop 360ms ease both;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -152,6 +189,27 @@ a:hover {
   box-shadow: 0 10px 26px rgba(55, 16, 92, 0.10);
   text-decoration: none;
   white-space: nowrap;
+  position: relative;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.pill:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(185, 131, 255, 0.16),
+    rgba(255, 102, 204, 0.10)
+  );
+  border-color: rgba(185, 131, 255, 0.22);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(55, 16, 92, 0.14);
+}
+
+.pill:active {
+  transform: translateY(1px);
 }
 
 .pill strong {
@@ -191,6 +249,21 @@ a:hover {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.card:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.86),
+    rgba(255, 255, 255, 0.60)
+  );
+  border-color: rgba(185, 131, 255, 0.20);
+  box-shadow: 0 24px 70px rgba(55, 16, 92, 0.20);
 }
 
 .card-pad {
@@ -254,8 +327,23 @@ a:hover {
 
 .btn:hover {
   text-decoration: none;
+  background: linear-gradient(
+    90deg,
+    rgba(185, 131, 255, 0.16),
+    rgba(255, 102, 204, 0.10)
+  );
+  border-color: rgba(185, 131, 255, 0.22);
   transform: translateY(-1px);
   transition: transform 120ms ease, background 120ms ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Anchor jump offset for sticky header */
+[id] {
+  scroll-margin-top: 96px;
 }
 
 /* Home page video hero */
@@ -525,6 +613,19 @@ a:hover {
   text-decoration: none;
 }
 
+/* Scroll reveal (added by script.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 420ms ease, transform 420ms ease;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Projects: UX/UI writeup + mockups */
 .prose {
   color: var(--text);
@@ -682,6 +783,34 @@ a:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    opacity: 1;
+    transform: none;
+  }
+
+  body.is-loaded {
+    transition: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .pill,
+  .btn {
+    transition: none;
+  }
+
+  .card {
+    transition: none;
+  }
+
   .btn:hover {
     transform: none;
   }
