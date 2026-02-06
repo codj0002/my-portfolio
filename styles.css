@@ -16,16 +16,20 @@
   --max: 1100px;
   --font-heading: "HFMigraffi", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-  --font-body: "Cofo", "Recoleta", ui-serif, Georgia, "Times New Roman", Times, serif;
+  /* Body font comes from Adobe Fonts (Typekit) */
+  --font-body: "cofo-sans-variable", "CoFo Sans Variable", ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans",
+    sans-serif;
 }
 
 /*
   Fonts
   -----
-  Add your font files here:
+  Heading font is local (optional):
     assets/fonts/HFMigraffi.woff2
-    assets/fonts/Cofo.woff2
-    assets/fonts/Recoleta.woff2 (optional fallback)
+
+  Body font is loaded via:
+    https://use.typekit.net/qea4izl.css
 */
 @font-face {
   font-family: "HFMigraffi";
@@ -35,21 +39,7 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Cofo";
-  src: url("assets/fonts/Cofo.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Recoleta";
-  src: url("assets/fonts/Recoleta.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
+/* CoFo Sans Variable is loaded from Typekit */
 
 *,
 *::before,
@@ -523,6 +513,15 @@ a:hover {
 }
 
 .content-link:hover {
+  text-decoration: none;
+}
+
+/* Image links (no underline) */
+.img-link {
+  display: block;
+}
+
+.img-link:hover {
   text-decoration: none;
 }
 
