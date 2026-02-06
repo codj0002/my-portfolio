@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Home</title>
+    <meta
+      name="description"
+      content="Portfolio website — illustration, graphic design, and creative work."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-home">
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav" aria-label="Primary">
+          <a class="brand" href="index.html">
+            <img class="brand-logo" src="assets/logo.png" alt="Site logo" />
+            <span>Portfolio</span>
+          </a>
+
+          <div class="nav-links">
+            <a class="pill" href="index.html" aria-current="page">
+              <strong>Home</strong>
+            </a>
+            <a class="pill" href="about.html">About</a>
+            <a class="pill" href="Project.html">Projects</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-shell">
+          <div class="hero-media" aria-hidden="true">
+            <video
+              class="hero-video"
+              src="assets/portfolio-home.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+            ></video>
+          </div>
+
+          <div class="hero-content">
+            <div class="grid hero-grid">
+              <div class="span-12 card card-pad">
+                <p class="tagline">
+                  <span class="dot" aria-hidden="true"></span>
+                  Welcome to my portfolio
+                </p>
+
+                <h1 class="title">Loic Codjia</h1>
+                <p class="subtitle">
+                  Illustrator • Graphic Designer • Creative projects and visuals.
+                </p>
+
+                <div class="role-row" aria-label="Roles">
+                  <span class="role">Illustrator</span>
+                  <span class="role">Graphic Designer</span>
+                  <span class="role">Photographer</span>
+                </div>
+
+                <div class="btn-row">
+                  <a class="btn primary" href="Project.html">View projects</a>
+                  <a class="btn" href="about.html">About me</a>
+                </div>
+
+                
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="grid">
+            <div class="span-12 card card-pad" id="contact">
+              <h2 style="margin: 0 0 8px">Contact</h2>
+              <div class="contact-row" style="margin-top: 12px">
+                <div class="contact-item">
+                  <img
+                    class="contact-icon"
+                    src="assets/gmail.png"
+                    alt="Email icon"
+                    loading="lazy"
+                  />
+                  <div>
+                    <strong>Email</strong>:
+                    <a href="mailto:codjialoic@gmail.com">codjialoic@gmail.com</a>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <img
+                    class="contact-icon"
+                    src="assets/social.png"
+                    alt="Instagram icon"
+                    loading="lazy"
+                  />
+                  <div>
+                    <strong>Instagram</strong>:
+                    <a href="https://www.instagram.com/kuro_murasame/" target="_blank" rel="noreferrer"
+                      >@kuro_murasame</a
+                    >
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <img
+                    class="contact-icon"
+                    src="assets/behance.png"
+                    alt="Behance icon"
+                    loading="lazy"
+                  />
+                  <div>
+                    <strong>Behance</strong>:
+                    <a href="https://www.behance.net/loiccodjia" target="_blank" rel="noreferrer"
+                      >behance.net/loiccodjia</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="line" aria-hidden="true"></div>
+        <small>© <span id="year">2026</span> Portfolio</small>
+      </div>
+      <script>
+        document.getElementById("year").textContent = String(
+          new Date().getFullYear()
+        );
+      </script>
+    </footer>
+  </body>
+</html>

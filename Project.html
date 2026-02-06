@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Projects</title>
+    <meta
+      name="description"
+      content="Projects page — selected illustration and design work."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-projects">
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav" aria-label="Primary">
+          <a class="brand" href="index.html">
+            <img class="brand-logo" src="assets/logo.png" alt="Site logo" />
+            <span>Portfolio</span>
+          </a>
+
+          <div class="nav-links">
+            <a class="pill" href="index.html">Home</a>
+            <a class="pill" href="about.html">About</a>
+            <a class="pill" href="Project.html" aria-current="page">
+              <strong>Projects</strong>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="grid">
+            <div class="span-12 card card-pad">
+              <h1 class="content-title">CONTENT</h1>
+
+              <div class="content-list" aria-label="Project categories">
+                <a class="content-link" href="#ux-ui">
+                  <div class="content-item">
+                    <div class="content-num">/01/</div>
+                    <div class="content-name">UX-UI</div>
+                  </div>
+                </a>
+
+                <a class="content-link" href="#branding">
+                  <div class="content-item">
+                    <div class="content-num">/02/</div>
+                    <div class="content-name">BRANDING</div>
+                  </div>
+                </a>
+
+                <a class="content-link" href="#illustration">
+                  <div class="content-item">
+                    <div class="content-num">/03/</div>
+                    <div class="content-name">ILLUSTRATION</div>
+                  </div>
+                </a>
+
+                <a class="content-link" href="#animation">
+                  <div class="content-item">
+                    <div class="content-num">/04/</div>
+                    <div class="content-name">ANIMATION</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+        
+              </p>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="line" aria-hidden="true"></div>
+        <small>© <span id="year">2026</span> Portfolio</small>
+      </div>
+      <script>
+        document.getElementById("year").textContent = String(
+          new Date().getFullYear()
+        );
+      </script>
+    </footer>
+  </body>
+</html>
+
